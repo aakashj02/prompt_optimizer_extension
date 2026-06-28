@@ -1,0 +1,7 @@
+{
+  "manifest_version": 3,
+  "name": "TokenShrink Pro",
+  "version": "1.2",
+  "permissions": ["activeTab", "storage"],
+  "action": { "default_popup": "popup.html" }
+}

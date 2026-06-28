@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: sans-serif;
+            width: 375px;
+            padding: 15px;
+            background: #1e1e2f;
+            color: #fff;
+        }
+
+        textarea {
+            width: 100%;
+            height: 80px;
+            background: #2d2d44;
+            color: white;
+            border-radius: 5px;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #444;
+        }
+
+        button {
+            width: 100%;
+            padding: 8px;
+            background: #6c5ce7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 5px 0;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .token-counter {
+            font-size: 10px;
+            color: #aaa;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        #diffOutput {
+            font-size: 12px;
+            white-space: pre-wrap;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            background: #2d2d44;
+            padding: 8px;
+            border-radius: 5px;
+            max-height: 120px;
+            overflow-y: auto;
+            border: 1px solid #444;
+        }
+
+        .del {
+            color: #ff7675;
+            text-decoration: line-through;
+        }
+
+        .ins {
+            color: #55efc4;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h4 {
+            margin: 10px 0 5px 0;
+            font-size: 13px;
+            color: #dfe6e9;
+        }
+
+        ul {
+            font-size: 11px;
+            padding-left: 20px;
+            color: #b2bec3;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>✨ TokenShrink Pro</h3>
+    <textarea id="userInput" placeholder="Paste your messy prompt here..."></textarea>
+    <div id="inputTokens" class="token-counter">Tokens: 0</div>
+    <button id="optimizeBtn">Optimize Prompt</button>
+
+    <div id="resultArea" class="hidden">
+        <h4>Diff View:</h4>
+        <div id="diffOutput"></div>
+
+        <h4>Optimized Prompt:</h4>
+        <textarea id="optimizedOutput" readonly></textarea>
+        <button id="copyBtn" style="background: #00b894;">Copy Prompt</button>
+    </div>
+
+    <div id="historyArea">
+        <h4>History</h4>
+        <ul id="historyList"></ul>
+        <button id="exportBtn" style="background:#0984e3">Export to CSV</button>
+    </div>
+
+    <script src="tokenizer.js"></script>
+    <script src="diff.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>
